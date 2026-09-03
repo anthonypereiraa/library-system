@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 public record StudentRequest(
         @NotBlank
-        @Pattern(regexp = "^[0-9]{13}$")
+        @Pattern(regexp = "^[0-9]{12}$")
         String enrollmentNumber,
         @NotBlank
         @Size(min = 1, max = 50)
