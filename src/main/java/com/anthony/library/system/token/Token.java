@@ -6,22 +6,22 @@ import jakarta.persistence.*;
 import static jakarta.persistence.GenerationType.UUID;
 
 @Entity
-@Table(name = "TOKENS")
+@Table(name = "tokens")
 public class Token {
     @Id
     @GeneratedValue(strategy = UUID)
     private String id;
-    @Column(name = "TOKEN", unique = true, nullable = false)
+    @Column(unique = true, nullable = false)
     public String token;
     @Enumerated(EnumType.STRING)
-    @Column(name = "TOKEN_TYPE", nullable = false)
+    @Column(nullable = false)
     public TokenType tokenType;
-    @Column(name = "REVOKED", nullable = false)
+    @Column(nullable = false)
     public Boolean revoked;
-    @Column(name = "EXPIRED", nullable = false)
+    @Column(nullable = false)
     public Boolean expired;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "USER_ID", nullable = false)
+    @JoinColumn(nullable = false)
     public User user;
 
     protected Token() {}

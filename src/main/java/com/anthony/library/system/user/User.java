@@ -11,25 +11,25 @@ import java.util.List;
 import static jakarta.persistence.GenerationType.UUID;
 
 @Entity
-@Table(name = "USERS")
+@Table(name = "users")
 public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = UUID)
     private String id;
-    @Column(name = "FIRST_NAME", nullable = false)
+    @Column(nullable = false)
     private String firstName;
-    @Column(name = "LAST_NAME", nullable = false)
+    @Column(nullable = false)
     private String lastName;
-    @Column(name = "EMAIL", nullable = false, unique = true)
+    @Column(nullable = false, unique = true)
     private String email;
-    @Column(name = "PASSWORD", nullable = false)
+    @Column(nullable = false)
     private String password;
     @Enumerated(EnumType.STRING)
-    @Column(name = "ROLE", nullable = false)
+    @Column(nullable = false)
     private Role role;
     @OneToMany(mappedBy = "user")
-    @Column(name = "TOKENS", nullable = false)
+    @Column(nullable = false)
     private List<Token> tokens;
 
     protected User() {}
