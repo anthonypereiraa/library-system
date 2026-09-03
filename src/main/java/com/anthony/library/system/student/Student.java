@@ -7,29 +7,28 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "STUDENTS")
+@Table(name = "students")
 public class Student extends BaseEntity {
-    @Column(name = "ENROLLMENT_NUMBER", unique = true, nullable = false)
+    @Column(unique = true, nullable = false)
     private String enrollmentNumber;
-    @Column(name = "FIRST_NAME", nullable = false)
+    @Column(nullable = false)
     private String firstName;
-    @Column(name = "LAST_NAME", nullable = false)
+    @Column(nullable = false)
     private String lastName;
-    @Column(name = "EMAIL", unique = true, nullable = false)
+    @Column(unique = true, nullable = false)
     private String email;
     @ManyToOne
-    @JoinColumn(name = "COURSE_ID")
+    @JoinColumn(name = "course_uid")
     private Course course;
-    @Column(name = "SEMESTER", nullable = false)
+    @Column(nullable = false)
     private String semester;
     @Enumerated(EnumType.STRING)
-    @Column(name = "STATUS", nullable = false)
+    @Column(nullable = false)
     private StudentStatus status;
-    @Column(name = "CPF", unique = true)
+    @Column(unique = true)
     private String cpf;
-    @Column(name = "PHONE_NUMBER", unique = true)
+    @Column(unique = true)
     private String phoneNumber;
-    @Column(name = "DATE_OF_BIRTH")
     private LocalDate dateOfBirth;
 
     protected Student() {}

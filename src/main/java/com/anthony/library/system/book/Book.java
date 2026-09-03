@@ -4,19 +4,19 @@ import com.anthony.library.system.common.BaseEntity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "BOOKS")
+@Table(name = "books")
 public class Book extends BaseEntity {
-    @Column(name = "TITLE", nullable = false)
+    @Column(nullable = false)
     private String title;
-    @Column(name = "AUTHOR", nullable = false)
+    @Column(nullable = false)
     private String author;
-    @Column(name = "PUBLISHER", nullable = false)
+    @Column(nullable = false)
     private String publisher;
-    @Column(name = "ISBN", unique = true, nullable = false)
+    @Column(unique = true, nullable = false)
     private String isbn;
-    @Column(name = "PUBLICATION_YEAR", nullable = false)
+    @Column(nullable = false)
     private Integer publicationYear;
-    @Column(name = "QUANTITY", nullable = false)
+    @Column(nullable = false)
     private Integer quantity;
 
     protected Book() {}

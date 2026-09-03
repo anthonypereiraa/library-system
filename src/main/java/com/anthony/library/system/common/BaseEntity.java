@@ -19,16 +19,16 @@ public abstract class BaseEntity {
     @GeneratedValue(strategy = UUID)
     private String id;
     @CreatedDate
-    @Column(name = "CREATED_DATE", nullable = false, updatable = false)
+    @Column(nullable = false, updatable = false)
     private LocalDateTime createdDate;
     @LastModifiedDate
-    @Column(name = "LAST_MODIFIED_DATE", insertable = false)
+    @Column(insertable = false)
     private LocalDateTime lastModifiedDate;
     @CreatedBy
-    @Column(name = "CREATED_BY", nullable = false, updatable = false)
+    @Column(nullable = false, updatable = false)
     private String createBy;
     @LastModifiedBy
-    @Column(name = "LAST_MODIFIED_BY", insertable = false)
+    @Column(insertable = false)
     private String lastModifiedBy;
 
     public BaseEntity() {

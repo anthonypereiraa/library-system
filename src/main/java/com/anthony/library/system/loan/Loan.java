@@ -8,25 +8,25 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "LOANS")
+@Table(name = "loans")
 public class Loan extends BaseEntity {
 
     @ManyToOne
-    @JoinColumn(name = "BOOK_ID", nullable = false)
+    @JoinColumn(name = "book_uid", nullable = false)
     private Book book;
 
     @ManyToOne
-    @JoinColumn(name = "STUDENT_ID", nullable = false)
+    @JoinColumn(name = "student_uid", nullable = false)
     private Student student;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "STATUS", nullable = false)
+    @Column(nullable = false)
     private LoanStatus status;
 
-    @Column(name = "START_DATE", nullable = false)
+    @Column(nullable = false)
     private LocalDate startDate;
 
-    @Column(name = "END_DATE", nullable = false)
+    @Column(nullable = false)
     private LocalDate endDate;
 
     protected Loan() {

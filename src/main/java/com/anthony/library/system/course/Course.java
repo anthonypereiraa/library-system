@@ -4,11 +4,11 @@ import com.anthony.library.system.common.BaseEntity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "COURSES")
+@Table(name = "courses")
 public class Course extends BaseEntity {
-    @Column(name = "NAME", nullable = false)
+    @Column(nullable = false)
     private String name;
-    @Column(name = "CODE", unique = true, nullable = false)
+    @Column(unique = true, nullable = false)
     private String code;
 
     protected Course() {
